@@ -19,7 +19,7 @@ A beautiful web application for showcasing kids' artwork with an admin backend f
 
 ## Tech Stack
 
-- **Next.js 15+** - React framework with server-side rendering
+- **Next.js 16+** - React framework with server-side rendering
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Modern, responsive styling
 - **File-based storage** - Simple JSON data storage

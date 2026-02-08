@@ -12,6 +12,24 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 })
     }
 
+    // Validate file type - only allow images
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp']
+    if (!allowedTypes.includes(file.type)) {
+      return NextResponse.json(
+        { error: 'Invalid file type. Only image files are allowed.' },
+        { status: 400 }
+      )
+    }
+
+    // Validate file size (max 5MB)
+    const maxSize = 5 * 1024 * 1024 // 5MB in bytes
+    if (file.size > maxSize) {
+      return NextResponse.json(
+        { error: 'File too large. Maximum size is 5MB.' },
+        { status: 400 }
+      )
+    }
+
     // Create uploads directory if it doesn't exist
     const uploadsDir = path.join(process.cwd(), 'public', 'uploads')
     try {

@@ -1,5 +1,18 @@
 'use client'
 
+/**
+ * SECURITY WARNING: This is a simplified authentication implementation for demonstration purposes.
+ * The password is hardcoded in the client-side code and visible in the browser bundle.
+ * 
+ * For production use, implement:
+ * - Server-side authentication with NextAuth.js or similar
+ * - Environment variables for credentials
+ * - Proper password hashing (bcrypt, argon2)
+ * - HTTPS/TLS encryption
+ * - Rate limiting to prevent brute force attacks
+ * - Session management with secure cookies
+ */
+
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
