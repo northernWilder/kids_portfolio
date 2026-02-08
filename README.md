@@ -86,7 +86,8 @@ flutter pub get
 
 1. In Firebase Console, add a Web app to your project
 2. Copy the Firebase configuration
-3. Update `lib/main.dart` with your Firebase configuration:
+3. **Important**: Copy `.firebaserc.template` to `.firebaserc` and update with your project ID
+4. Update `lib/main.dart` with your Firebase configuration:
 
 ```dart
 await Firebase.initializeApp(

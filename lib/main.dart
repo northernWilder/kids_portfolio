@@ -7,6 +7,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   // Initialize Firebase
+  // TODO: Replace these values with your actual Firebase configuration
+  // See FIREBASE_SETUP.md for detailed instructions
   await Firebase.initializeApp(
     options: const FirebaseOptions(
       apiKey: "YOUR_API_KEY",

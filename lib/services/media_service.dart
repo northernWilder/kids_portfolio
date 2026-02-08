@@ -47,7 +47,10 @@ class MediaService {
       }
       return null;
     } catch (e) {
-      print('Error fetching media item: $e');
+      // TODO: Implement proper error logging
+      // Consider using a logging package like 'logger' in production
+      // ignore: avoid_print
+      debugPrint('Error fetching media item: $e');
       return null;
     }
   }
@@ -62,7 +65,9 @@ class MediaService {
           .add(item.toFirestore());
       return docRef.id;
     } catch (e) {
-      print('Error adding media item: $e');
+      // TODO: Implement proper error logging
+      // ignore: avoid_print
+      debugPrint('Error adding media item: $e');
       return null;
     }
   }
@@ -78,7 +83,9 @@ class MediaService {
           .update(item.toFirestore());
       return true;
     } catch (e) {
-      print('Error updating media item: $e');
+      // TODO: Implement proper error logging
+      // ignore: avoid_print
+      debugPrint('Error updating media item: $e');
       return false;
     }
   }
@@ -91,7 +98,9 @@ class MediaService {
       await _firestore.collection(_collectionName).doc(id).delete();
       return true;
     } catch (e) {
-      print('Error deleting media item: $e');
+      // TODO: Implement proper error logging
+      // ignore: avoid_print
+      debugPrint('Error deleting media item: $e');
       return false;
     }
   }
